@@ -11,10 +11,12 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  <body>
+  <body class="flex flex-col flex-wrap justify-between items-cener px-auto min-h-screen">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="px-8 h-screen container flex flex-col flex-wrap items-cener mx-auto">
+      <%= yield %>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.turbo.min.js"></script>
   </body>
 </html>
