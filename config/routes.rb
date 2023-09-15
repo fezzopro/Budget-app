@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'category/index'
+  get 'category/new'
+  get 'category/edit'
   root 'home#index'
   devise_for :users
   get 'user/index'
