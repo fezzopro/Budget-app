@@ -11,10 +11,13 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  <body class="flex flex-col flex-wrap justify-between items-cener px-auto min-h-screen">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <div class="px-8 h-screen container flex flex-col flex-wrap items-cener mx-auto">
+  <body class="flex flex-col justify-between items-start px-auto min-h-screen">
+    
+    <div class="flex flex-wrap gap-4 justify-between py-4 px-2">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+    <div class="px-8 h-screen container flex flex-col items-center mx-auto">
       <%= yield %>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.turbo.min.js"></script>
