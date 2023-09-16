@@ -1,10 +1,23 @@
-<div class="home px-8 h-screen container flex flex-col flex-wrap justify-end items-cener mx-auto">
-  <div class="login-buttons container flex flex-col flex-wrap justify-between items-cener mx-auto items-center pb-16 gap-8">
-    <div class="flex w-screen justify-center">
-      <%= link_to "LOG IN", new_user_session_path, class: "w-4/5 flex justify-center text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800" %>
+<div class="phone-border">
+  <div class="container d-flex flex-column align-items-center" style="min-height: 70vh; padding-bottom: 1vh;">
+    <div class="text-center w-100 mb-auto" style="max-width: 400px;">
+      <h1></h1>
+      <%= image_tag("splash-phone.png", class: "img-fluid") %>
     </div>
-    <div class="flex w-screen justify-center">
-      <%= link_to "SIGN UP", new_user_registration_path, class: "w-4/5 flex justify-center text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800" %>
+
+    <div class="w-100 d-flex flex-column align-items-center mt-auto">
+      <% if user_signed_in? %>
+        <%= form_with url: destroy_user_session_path, method: :delete do %>
+          <%= submit_tag 'Logout', class: "btn btn-primary w-100" %>
+        <% end %>
+      <% else %>
+        <div class="w-100">
+          <%= link_to "LOG IN", new_user_session_path, class: "btn btn-primary w-100", style: "background-color: #3778c2; color: white;" %>
+        </div>
+        <div class="w-100 mt-2">
+          <%= link_to "SIGN UP", new_user_registration_path, class: "btn btn-outline-dark w-100", style: "color: #434b54; border-color: #434b54;" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
