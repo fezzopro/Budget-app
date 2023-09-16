@@ -1,19 +1,19 @@
-<div class="title login flex flex-wrap gap-4 justify-between py-4 px-2">
-  <span>
-    <%= link_to root_path do %>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
-      </svg>
-    <% end %>
-  </span>
-  <span><h2>LOGIN</h2></span>
-  <span>
-    Log In
-  </span>
-</div>
-
-<div class="flex flex-col flex-wrap py-2">
+<div class="flex flex-col container pb-2">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="title login flex flex-wrap gap-4 justify-between py-4 px-2">
+      <span>
+        <%= link_to root_path do %>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+          </svg>
+        <% end %>
+      </span>
+      <span><h2>LOGIN</h2></span>
+      <span>
+        <%= f.submit "Log in" %>
+      </span>
+    </div>
+
     <div class="field flex flex-col">
       <%= f.label :email %>
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -30,10 +30,6 @@
         <%= f.label :remember_me %>
       </div>
     <% end %>
-
-    <div class="actions w-4/5 flex justify-center text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
-      <%= f.submit "Log in" %>
-    </div>
   <% end %>
 </div>
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
