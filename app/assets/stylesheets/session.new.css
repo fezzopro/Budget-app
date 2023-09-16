@@ -48,6 +48,6 @@
   border: 2px solid blue;
 }
 
-input[type='radio']:checked+.icon-label {
+input[type='radio']:checked + .icon-label {
   border: 2px solid green;
 }
