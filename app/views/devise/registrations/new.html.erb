@@ -1,46 +1,38 @@
-<div class="flex flex-col container pb-2">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { 'class' => "flex flex-col gap-2"}) do |f| %>
-    <div class="title login flex flex-wrap gap-4 justify-between py-4 px-2">
-      <span>
-        <%= link_to root_path do %>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
-          </svg>
-        <% end %>
-      </span>
-      <span><h2>SIGNUP</h2></span>
-      <span>
-        <%= f.submit "Next" %>
-      </span>
-    </div>
+<div class="phone-border">
+  <div class="flex-column align-items-centerd-flex flex-column align-items-center" style="min-height: 70vh; padding-bottom: 1vh; max-width: 100%!important;">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-    <%= render "devise/shared/error_messages", resource: resource %>
-
-    <div class="field flex flex-col">
-      <%= f.label :name %>
-      <%= f.text_field :name, autofocus: true, autocomplete: "Full Name" %>
-    </div>
-
-    <div class="field flex flex-col">
-      <%= f.label :email %>
-      <%= f.email_field :email, autocomplete: "email" %>
-    </div>
-
-    <div class="field flex flex-col">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %>
-      <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
-
-    <div class="field flex flex-col">
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
+      <!-- Barra superior azul -->
+<div class="w-100 bg-primary text-white text-center d-flex justify-content-between align-items-center" style="height: 50px;">
+  <%= link_to root_path, class: "text-white ml-3" do %>
+    <i class="fas fa-arrow-left" style="margin-left: 5px;"></i>
   <% end %>
+  <span>REGISTER</span>
+  <%= f.submit "Next", class: "text-white mr-3 bg-transparent border-0", style: "cursor: pointer;" %>
 </div>
 
-<%- if  devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name), class: "w-4/5 flex justify-center text-blue-700 hover:text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800" %>
-<% end %>
+      <!-- Formulario de Registro -->
+      <div class="w-100 mt-auto mb-auto" style="max-width: 100%!important;">
+        <div class="form-group">
+          <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "Full name" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Password" %>
+          <% if @minimum_password_length %>
+            <small class="form-text text-muted">(<%= @minimum_password_length %> characters minimum)</small>
+          <% end %>
+        </div>
+
+        <div class="form-group">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Confirm Password" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
