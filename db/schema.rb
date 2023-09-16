@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_14_095227) do
 
   create_table "entities", force: :cascade do |t|
     t.string "name"
-    t.float "amount"
+    t.decimal "amount"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -28,6 +28,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_14_095227) do
     t.bigint "entity_id", null: false
     t.index ["entity_id", "group_id"], name: "index_entities_groups_on_entity_id_and_group_id"
     t.index ["group_id", "entity_id"], name: "index_entities_groups_on_group_id_and_entity_id"
+  end
+
+  create_table "group_entities", force: :cascade do |t|
+    t.bigint "group_id", null: false
+    t.bigint "entity_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["entity_id"], name: "index_group_entities_on_entity_id"
+    t.index ["group_id"], name: "index_group_entities_on_group_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -48,19 +57,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_14_095227) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "entities", "users"
+  add_foreign_key "group_entities", "entities"
+  add_foreign_key "group_entities", "groups"
   add_foreign_key "groups", "users"
 end
