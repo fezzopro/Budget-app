@@ -1,0 +1,18 @@
+databases:
+  - name: budgetapp3-db
+    databaseName: vfmfzqpd
+    user: vfmfzqpd
+
+services:
+  - type: web
+    name: budgetapp
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: vfmfzqpd
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
