@@ -127,11 +127,6 @@ To run tests and check linters linter, run the following command:
 - GitHub: [@githubhandle](https://github.com/fezzopro)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/kamana-felix/)
 
-👤 **Paul Tesfaye**
-
-- GitHub: [@githubhandle](https://github.com/Paul-tes)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/paul-tesfaye/)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
