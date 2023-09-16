@@ -42,7 +42,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   config.action_mailer.default_url_options = { host: ENV.fetch("RAILS_BASE_URL"), port: 3000 }
-  config.hosts << ENV.fetch("RAILS_BASE_URL")
+  config.hosts << "home-budget-tracker.onrender.com"
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
