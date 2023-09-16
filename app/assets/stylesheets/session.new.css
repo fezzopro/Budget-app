@@ -2,3 +2,52 @@
   background-color: #3878c2;
   color: white;
 }
+
+.phone-border {
+  margin: auto;
+  width: 375px;
+  border: 16px solid #d6d6d6;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  box-shadow: 0 0 30px gray;
+  border-radius: 25px;
+}
+
+.custom-dropdown .options {
+  display: none;
+  position: absolute;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+.custom-dropdown:hover .options {
+  display: block;
+}
+
+.d-none {
+  display: none;
+}
+
+.icon-selection {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon-header {
+  margin-bottom: 10px;
+}
+
+.icon-label {
+  cursor: pointer;
+  border: 2px solid transparent;
+  display: inline-block;
+  margin: 5px;
+}
+
+.icon-label:hover {
+  border: 2px solid blue;
+}
+
+input[type='radio']:checked+.icon-label {
+  border: 2px solid green;
+}
