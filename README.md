@@ -1,4 +1,4 @@
-<h1 align="center">RECIPE-APP</h1>
+<h1 align="center">HOME-BUDGET APP</h1>
 <a name="readme-top"></a>
 
 # 📗 Table of Contents 
@@ -22,7 +22,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 ome Budget Tracker <a name="about-project"></a>
+# 📖 Home Budget Tracker <a name="about-project"></a>
 
 **[Description]**
 
